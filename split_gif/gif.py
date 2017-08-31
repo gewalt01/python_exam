@@ -30,12 +30,9 @@ class GifImage:
         try:
             frame = Image.new('RGBA', self.image.size)
 
-            for x in xrange(0, num + 1):
+            for x in range(0, num + 1):
                 self.image.seek(x)
                 frame.paste(self.image, (0,0), self.image.convert('RGBA'))
-            self.image.seek(num)
-            frame.paste(self.image, (0,0), self.image.convert('RGBA'))
-        
 
         except:
             frame = None
